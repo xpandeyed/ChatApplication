@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -20,10 +21,11 @@ import kotlinx.coroutines.launch
 class MessagesActivity : AppCompatActivity() {
 
     private val sender:String = Firebase.auth.currentUser!!.uid
+    private val name = Firebase.auth.currentUser!!.displayName!!
     private lateinit var receiver:String
     private lateinit var rvMessages :RecyclerView
     private lateinit var adapter : MessagesAdapter
-    private lateinit var messages : MutableList<String>
+    private var messages  = mutableListOf<Message>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_messages)
@@ -33,7 +35,8 @@ class MessagesActivity : AppCompatActivity() {
 
         rvMessages = findViewById(R.id.rvMessages)
         adapter = MessagesAdapter(messages)
-
+        rvMessages.adapter = adapter
+        rvMessages.layoutManager = LinearLayoutManager(this)
         val bSend = findViewById<Button>(R.id.bSend)
         val etMessage = findViewById<EditText>(R.id.etMessage)
         bSend.setOnClickListener {
@@ -43,6 +46,7 @@ class MessagesActivity : AppCompatActivity() {
             }
             else{
                 sendMessage(message)
+                etMessage.setText("")
             }
         }
 
@@ -58,14 +62,16 @@ class MessagesActivity : AppCompatActivity() {
                     if(snapshot.exists()){
                         messages.clear()
                         for(message in snapshot.children){
-                            val currMessage = message.getValue(String::class.java)
+                            Log.i("XPND", message.toString())
+                            val currMessage = message.getValue(Message::class.java)
+                            Log.i("NEWNEW", currMessage.toString())
                             messages.add(currMessage!!)
                         }
                         adapter.notifyDataSetChanged()
 
 
                     }else{
-                        Log.i("XPND", "Chapter titles do not exist")
+                        Log.i("XPND", "Snapshot does not exist")
                     }
                 }
                 override fun onCancelled(error: DatabaseError) {
@@ -76,11 +82,11 @@ class MessagesActivity : AppCompatActivity() {
     }
 
     private fun sendMessage(message: String) {
-
-        messages.add(message)
-
+        messages.add(Message(name, message))
+        Log.i("NEWNEW", messages.toString())
+        adapter.notifyDataSetChanged()
         val database = Firebase.database.getReference("USERS")
-        database.child(sender).child(receiver).setValue(message)
-        database.child(receiver).child(sender).setValue(message)
+        database.child(sender).child(receiver).child(messages.size.toString()).child(name).setValue(message)
+        database.child(receiver).child(sender).child(messages.size.toString()).child(name).setValue(message)
     }
 }

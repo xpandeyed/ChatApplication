@@ -16,6 +16,7 @@
         android:layout_width="match_parent"
         android:id="@+id/tvMessage"
         android:layout_height="wrap_content"
+        android:minHeight="40dp"
         app:layout_constraintTop_toBottomOf="@id/tvUserName"
         android:text="Some Message"/>
 

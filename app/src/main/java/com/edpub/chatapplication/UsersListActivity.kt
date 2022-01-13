@@ -26,9 +26,14 @@ class UsersListActivity : AppCompatActivity() {
         
         adapter.setOnItemClickListener(object : UsersListAdapter.OnItemClickListener{
             override fun onItemClick(position: Int) {
+
                 val receiver = DataCollection.usersList[position].UID
-                val intent = Intent(parent, MessagesActivity::class.java)
+                val intent = Intent(this@UsersListActivity, MessagesActivity::class.java)
                 intent.putExtra("RECEIVER", receiver)
+
+                Log.i("NEWNEW", receiver.toString())
+                Log.i("NEWNEW", "Starting chat activity")
+                startActivity(intent)
 
             }
         })
