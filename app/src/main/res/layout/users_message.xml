@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/purple_200">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/tvUserName"
+        android:text="Name"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/tvMessage"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvUserName"
+        android:text="Some Message"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
