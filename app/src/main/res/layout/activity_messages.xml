@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grey_text_background"
     tools:context=".MessagesActivity">
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/ablChat"
@@ -30,23 +31,30 @@
         app:layout_constraintTop_toBottomOf="@id/ablChat"
         app:layout_constraintBottom_toTopOf="@id/etMessage"/>
 
-
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:id="@+id/etMessage"
         android:paddingStart="20dp"
         android:paddingTop="10dp"
         android:minHeight="60dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_margin="10dp"
         android:paddingBottom="10dp"
         android:background="@color/purple_200"
+        app:layout_constraintRight_toLeftOf="@+id/fabSend"
         android:hint="Your Message"
         app:layout_constraintBottom_toBottomOf="parent"/>
-    <Button
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:text="Send"
-        android:id="@+id/bSend"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/fabSend"
+        android:src="@drawable/ic_send"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toTopOf="@id/etMessage"
+        app:layout_constraintBottom_toBottomOf="@id/etMessage"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_height="wrap_content"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

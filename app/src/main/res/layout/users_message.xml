@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:padding="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/purple_200">
+    android:background="@drawable/button_background">
 
     <TextView
         android:layout_width="match_parent"
+        android:fontFamily="@font/metropolis_light"
+        android:textSize="18sp"
         android:layout_height="wrap_content"
+        android:textColor="@color/blue_title"
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/tvUserName"
         android:text="Name"/>
@@ -16,7 +23,9 @@
         android:layout_width="match_parent"
         android:id="@+id/tvMessage"
         android:layout_height="wrap_content"
-        android:minHeight="40dp"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:fontFamily="@font/metropolis_regular"
         app:layout_constraintTop_toBottomOf="@id/tvUserName"
         android:text="Some Message"/>
 

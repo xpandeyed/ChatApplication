@@ -1,15 +1,13 @@
 package com.edpub.chatapplication
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.auth.FirebaseAuth
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
@@ -39,9 +37,9 @@ class MessagesActivity : AppCompatActivity() {
         adapter = MessagesAdapter(messages)
         rvMessages.adapter = adapter
         rvMessages.layoutManager = LinearLayoutManager(this)
-        val bSend = findViewById<Button>(R.id.bSend)
+        val fabSend = findViewById<FloatingActionButton>(R.id.fabSend)
         val etMessage = findViewById<EditText>(R.id.etMessage)
-        bSend.setOnClickListener {
+        fabSend.setOnClickListener {
             val message = etMessage.text.toString()
             if(message.isEmpty() || message.length>99){
                 Toast.makeText(this, "Message must have length between 0 and 100", Toast.LENGTH_SHORT).show()
