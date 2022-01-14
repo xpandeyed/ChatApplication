@@ -7,6 +7,9 @@
     <color name="icon_inactive">#676667</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
+    <color name="chapter_text">#63658c</color>
+    <color name="pure_red">#FF0000</color>
+    <color name="light_blue_background">#f2f6f7</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
