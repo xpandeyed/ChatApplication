@@ -28,8 +28,10 @@ class UsersListActivity : AppCompatActivity() {
             override fun onItemClick(position: Int) {
 
                 val receiver = DataCollection.usersList[position].UID
+                val name = DataCollection.usersList[position].NAME
                 val intent = Intent(this@UsersListActivity, MessagesActivity::class.java)
                 intent.putExtra("RECEIVER", receiver)
+                intent.putExtra("FNAME", name)
 
                 Log.i("NEWNEW", receiver.toString())
                 Log.i("NEWNEW", "Starting chat activity")

@@ -25,11 +25,13 @@ class MessagesActivity : AppCompatActivity() {
     private lateinit var receiver:String
     private lateinit var rvMessages :RecyclerView
     private lateinit var adapter : MessagesAdapter
+    private lateinit var fName : String
     private var messages  = mutableListOf<Message>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_messages)
         receiver = intent.getStringExtra("RECEIVER")!!
+        fName = intent.getStringExtra("FNAME")!!
 
         loadMessages()
 
@@ -82,9 +84,20 @@ class MessagesActivity : AppCompatActivity() {
 
     private fun sendMessage(message: String) {
         val database = Firebase.database.getReference("USERS")
+
         database.child(sender).child(receiver).child(messages.size.toString()).child("NAME").setValue(name)
         database.child(sender).child(receiver).child(messages.size.toString()).child("MESSAGE").setValue(message)
         database.child(receiver).child(sender).child(messages.size.toString()).child("NAME").setValue(name)
         database.child(receiver).child(sender).child(messages.size.toString()).child("MESSAGE").setValue(message)
+
+        database.child(sender).child("RECENTS").child(receiver).child("UID").setValue(receiver)
+        database.child(sender).child("RECENTS").child(receiver).child("NAME").setValue(fName)
+        database.child(sender).child("RECENTS").child(receiver).child("MESSAGE").setValue(message)
+
+
+        database.child(receiver).child("RECENTS").child(sender).child("UID").setValue(sender)
+        database.child(receiver).child("RECENTS").child(sender).child("NAME").setValue(name)
+        database.child(receiver).child("RECENTS").child(sender).child("MESSAGE").setValue(message)
+
     }
 }
