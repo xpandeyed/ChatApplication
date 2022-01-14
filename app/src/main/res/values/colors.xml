@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="primaryColor">#0757f3</color>
+    <color name="blue_title">#24265f</color>
+    <color name="grey_text_background">#eeeef0</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="icon_inactive">#676667</color>
     <color name="purple_500">#FF6200EE</color>
