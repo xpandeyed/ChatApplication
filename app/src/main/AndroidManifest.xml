@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChatApplication">
         <activity
+            android:name=".UpdateProfileActivity"
+            android:exported="true" />
+        <activity
             android:name=".WebActivity"
             android:exported="true" />
         <activity
