@@ -20,8 +20,8 @@ class MessagesAdapter(private var messages : MutableList<Message>):RecyclerView.
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val message = messages[position]
-        holder.tvUserName.text = message.user
-        holder.tvMessage.text = message.message
+        holder.tvUserName.text = message.NAME
+        holder.tvMessage.text = message.MESSAGE
     }
 
     override fun getItemCount(): Int {

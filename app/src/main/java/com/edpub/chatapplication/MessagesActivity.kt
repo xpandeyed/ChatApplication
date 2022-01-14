@@ -69,7 +69,6 @@ class MessagesActivity : AppCompatActivity() {
                         }
                         adapter.notifyDataSetChanged()
 
-
                     }else{
                         Log.i("XPND", "Snapshot does not exist")
                     }
@@ -82,11 +81,10 @@ class MessagesActivity : AppCompatActivity() {
     }
 
     private fun sendMessage(message: String) {
-        messages.add(Message(name, message))
-        Log.i("NEWNEW", messages.toString())
-        adapter.notifyDataSetChanged()
         val database = Firebase.database.getReference("USERS")
-        database.child(sender).child(receiver).child(messages.size.toString()).child(name).setValue(message)
-        database.child(receiver).child(sender).child(messages.size.toString()).child(name).setValue(message)
+        database.child(sender).child(receiver).child(messages.size.toString()).child("NAME").setValue(name)
+        database.child(sender).child(receiver).child(messages.size.toString()).child("MESSAGE").setValue(message)
+        database.child(receiver).child(sender).child(messages.size.toString()).child("NAME").setValue(name)
+        database.child(receiver).child(sender).child(messages.size.toString()).child("MESSAGE").setValue(message)
     }
 }
