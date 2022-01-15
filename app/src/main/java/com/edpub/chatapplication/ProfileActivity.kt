@@ -42,7 +42,7 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(intent)
         }
         findViewById<TextView>(R.id.tvReport).setOnClickListener {
-            val url = "https://docs.google.com/forms/d/e/1FAIpQLScqWJta8g0dWkZKpe4TKnFf-Ud6PINh2nQoqJZDPfrvX9c7xw/viewform?usp=sf_link"
+            val url = "https://docs.google.com/forms/d/e/1FAIpQLSeUhmbLZEcW4JmAsbDrloeeksKCj6oM2Dhy0TzR2f55ci2aQg/viewform?usp=sf_link"
             val intent = Intent(this, WebActivity::class.java).apply {
                 putExtra("URL", url)
             }
@@ -64,8 +64,7 @@ class ProfileActivity : AppCompatActivity() {
         }
         findViewById<TextView>(R.id.tvRateUs).setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW).apply {
-                data = Uri.parse(
-                    "https://play.google.com/store/apps/details?id=com.edpub.cpp")
+                data = Uri.parse("https://play.google.com/store/apps/details?id=com.edpub.cpp")
                 setPackage("com.android.vending")
             }
             startActivity(intent)
