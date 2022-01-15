@@ -7,7 +7,9 @@ import android.provider.ContactsContract
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
+import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -53,9 +55,13 @@ class UsersListActivity : AppCompatActivity() {
                     if(snapshot.exists()){
                         Log.i("XPND", "Chapter titles exist")
                         DataCollection.usersList.clear()
+                        val me = Firebase.auth.currentUser!!.uid
                         for(user in snapshot.children){
                             val currUser = user.getValue(User::class.java)
-                            DataCollection.usersList.add(currUser!!)
+                            if(currUser!!.UID==me){
+                                continue
+                            }
+                            DataCollection.usersList.add(currUser)
                         }
                         DataCollection.isUsersListLoaded = true
                         adapter.notifyDataSetChanged()
