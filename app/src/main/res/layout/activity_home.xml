@@ -24,7 +24,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:background="@color/browser_actions_bg_grey"
+        android:background="@color/blue1"
         android:layout_height="0dp"
         android:id="@+id/rvRecentChats"
         app:layout_constraintTop_toBottomOf="@id/ablHome"
@@ -35,8 +35,12 @@
         android:id="@+id/fabNewMessage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:src="@drawable/new_chat"
-        android:layout_margin="20dp"
+        android:src="@drawable/ic_round_message_24"
+        android:backgroundTint="@color/blue8"
+        android:outlineSpotShadowColor="@color/blue8"
+        android:layout_margin="16dp"
+        app:tint="@null"
+        app:rippleColor="@color/blue3"
         android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
