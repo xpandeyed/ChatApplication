@@ -4,6 +4,9 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="2dp"
     android:background="@color/white"
+    android:elevation="6dp"
+    android:outlineAmbientShadowColor="@color/blue8"
+    android:outlineSpotShadowColor="@color/blue8"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <TextView
         android:layout_width="match_parent"
