@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/browser_actions_bg_grey"
+    android:background="@color/blue1"
     android:layout_height="match_parent"
     tools:context=".SignUp">
     <com.google.android.material.progressindicator.CircularProgressIndicator
@@ -18,6 +18,126 @@
         app:indicatorColor="@color/primaryColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+
+        <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/cvSignInContainer"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvAppName"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="50dp"
+                android:textColor="@color/primaryColor"
+                android:textSize="60sp"
+                android:text="xpand"
+                android:fontFamily="@font/metropolis_bold"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:textColor="#2d3e50"
+                android:id="@+id/tvSmallChapters"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="20dp"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/metropolis_semi_bold"
+                android:gravity="center_vertical"
+                android:text="Delete your account anytime"
+                android:textSize="25sp"
+                app:layout_constraintTop_toBottomOf="@+id/tvAppName"
+                app:drawableLeftCompat="@drawable/ic_tick_box" />
+
+            <TextView
+                android:textColor="#2d3e50"
+                android:id="@+id/tvExamples"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/metropolis_semi_bold"
+                android:gravity="center_vertical"
+                android:text="No end to end chat encryption"
+                android:textSize="25sp"
+                app:layout_constraintTop_toBottomOf="@id/tvSmallChapters"
+                app:drawableLeftCompat="@drawable/ic_warning_sign" />
+
+            <TextView
+                android:textColor="#2d3e50"
+                android:id="@+id/tvFavourites"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/metropolis_semi_bold"
+                android:gravity="center_vertical"
+                android:text="All users visible to all other users"
+                android:textSize="25sp"
+                app:layout_constraintTop_toBottomOf="@id/tvExamples"
+                app:drawableLeftCompat="@drawable/ic_warning_sign" />
+
+            <TextView
+                android:textColor="#2d3e50"
+                android:id="@+id/tvAdFree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/metropolis_semi_bold"
+                android:gravity="center_vertical"
+                android:text="No message deletion facility"
+                android:textSize="25sp"
+                app:layout_constraintTop_toBottomOf="@id/tvFavourites"
+                app:drawableLeftCompat="@drawable/ic_warning_sign" />
+
+            <TextView
+                android:id="@+id/tvFrequentUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:textColor="#2d3e50"
+                android:layout_marginRight="20dp"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/metropolis_semi_bold"
+                android:gravity="center_vertical"
+                android:text="Default google username is set as username"
+                android:textSize="25sp"
+                app:layout_constraintTop_toBottomOf="@id/tvAdFree"
+                app:drawableLeftCompat="@drawable/ic_warning_sign" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=". . ."
+                app:layout_constraintTop_toBottomOf="@id/tvFrequentUpdate"
+                android:layout_marginLeft="20dp"
+                android:textSize="50sp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textColor="#2d3e50"
+                android:layout_marginRight="20dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvSignInContainer"
