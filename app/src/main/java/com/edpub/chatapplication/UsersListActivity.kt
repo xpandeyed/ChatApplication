@@ -20,6 +20,9 @@ class UsersListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_users_list)
 
+        setSupportActionBar(findViewById(R.id.tbUsersList))
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         if(!DataCollection.isUsersListLoaded){
             loadUsers()
         }
