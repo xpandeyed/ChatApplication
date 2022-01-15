@@ -50,7 +50,7 @@ class ProfileActivity : AppCompatActivity() {
 
         }
         findViewById<TextView>(R.id.tvFeedback).setOnClickListener {
-            val url = "https://docs.google.com/forms/d/e/1FAIpQLScBQl72xho71K5f83_ceI5A8KNiBgfNNsvG6gkriEsN454r_Q/viewform?usp=sf_link"
+            val url = "https://docs.google.com/forms/d/e/1FAIpQLScoNkM8m7tHf6MlvZwbMcs0PN7oZd1pBc2GdYQTIE_H5RsBbQ/viewform?usp=sf_link"
             val intent = Intent(this, WebActivity::class.java).apply {
                 putExtra("URL", url)
             }

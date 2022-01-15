@@ -9,9 +9,22 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="chapter_text">#63658c</color>
     <color name="pure_red">#FF0000</color>
-    <color name="light_blue_background">#f2f6f7</color>
+    <color name="light_purple">#CCBBEE</color>
+    <color name="dark_purle">#643CB4</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!--Shades of Blue-->
+    <color name="blue1">#e6eefe</color>
+    <color name="blue2">#cdddfd</color>
+    <color name="blue3">#b5cdfb</color>
+    <color name="blue4">#9cbcfa</color>
+    <color name="blue5">#83abf9</color>
+    <color name="blue6">#6a9af8</color>
+    <color name="blue7">#5189f7</color>
+    <color name="blue8">#3979f5</color>
+    <color name="blue9">#2068f4</color>
+
+
 </resources>
