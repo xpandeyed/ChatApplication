@@ -29,6 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:id="@+id/rvMessages"
+        android:paddingBottom="10dp"
         app:layout_constraintTop_toBottomOf="@id/ablChat"
         app:layout_constraintBottom_toTopOf="@id/etMessage"/>
 
@@ -60,9 +61,7 @@
         android:outlineSpotShadowColor="@color/blue8"
         android:layout_margin="16dp"
         app:tint="@null"
-        android:background="@color/blue2"
         app:backgroundTint="@color/blue2"
-        android:backgroundTint="@color/blue2"
         android:elevation="6dp"
         app:layout_constraintTop_toTopOf="@id/etMessage"
         app:layout_constraintBottom_toBottomOf="@id/etMessage"
