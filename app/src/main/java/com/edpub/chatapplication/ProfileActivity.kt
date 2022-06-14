@@ -28,14 +28,14 @@ class ProfileActivity : AppCompatActivity() {
         }
 
         findViewById<TextView>(R.id.tvTermsConditions).setOnClickListener {
-            val url = "https://xpandeyed.github.io/EdPubCPPWeb/TermsAndConditions.html"
+            val url = "https://dev.to/xpandeyed/xpand-chat-application-1c05"
             val intent = Intent(this, WebActivity::class.java).apply {
                 putExtra("URL", url)
             }
             startActivity(intent)
         }
         findViewById<TextView>(R.id.tvPrivacyPolicy).setOnClickListener {
-            val url = "https://xpandeyed.github.io/EdPubCPPWeb/PrivacyPolicy.html"
+            val url = "https://dev.to/xpandeyed/xpand-chat-application-1c05"
             val intent = Intent(this, WebActivity::class.java).apply {
                 putExtra("URL", url)
             }
